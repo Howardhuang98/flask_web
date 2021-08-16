@@ -1,0 +1,2 @@
+# web
+nginx+gunicorn+flask
