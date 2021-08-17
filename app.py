@@ -5,10 +5,18 @@ import config
 from models import User, Question, Answer
 from exts import db
 from decorators import login_required
+from flask_migrate import Migrate
 from sqlalchemy import or_
 
 app = Flask(__name__)
 app.config.from_object(config)
+
+#   app
+#    | flask_sqlaichemy
+#   ORM映射
+#    |
+#   数据库
+# 将db对象与app对象进行关联
 db.init_app(app)
 
 
