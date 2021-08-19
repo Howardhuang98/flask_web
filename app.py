@@ -87,15 +87,15 @@ def register():
                 db.session.commit()
             except:
                 db.session.rollback
-                return render_template('register.html', message="数据库中已存在该用户或手机号，请联系管理员！")
-            return render_template('notification.html',notification="注册成功",web='/')
+                return render_template('notification.html', notification="注册失败，数据库中已存在该用户或手机号", web='/register/')
+            return render_template('notification.html', notification="注册成功,3秒后自动跳转登陆界面", web='/')
         else:
             return render_template('register.html', message="填写信息有误！")
+
 
 @app.route('/notification/')
 def notification():
     return "notification"
-
 
 
 # 钩子函数(注销)
