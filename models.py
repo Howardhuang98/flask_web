@@ -11,7 +11,7 @@ class User(db.Model):
     telephone = db.Column(db.String(11), nullable=False)
     username = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.String(100), nullable=False)
-    level = db.Column(db.Integer, nullable=False)
+    level = db.Column(db.Integer, nullable=False,default=1)
 
     def __str__(self):
         return self.username

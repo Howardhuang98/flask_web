@@ -10,14 +10,26 @@
 </head>
 <body>
 <div id="login">
-<h1><img src="../static/images/nanren_log.png"></h1>
+<h1><img src="../static/images/nanren_log.png" width="100%" height="100%"></h1>
 <p id="welcome_message">{{message}}</p>
-<form method="post">
+<div id="login_form">
+    <form  method="post">
     <input type="text" required="required" placeholder="用户名" name="username">
     <input type="password" required="required" placeholder="密码" name="password">
     <button class="but" type="submit">登录</button>
-</form>
+        </form>
 </div>
+    <div id="register_form">
+        <form method="get" action="/register">
+        <button class="but" type="submit">注册</button>
+    </form>
+    </div>
+
+</div>
+
+
+
+
 
 </body>
 </html>

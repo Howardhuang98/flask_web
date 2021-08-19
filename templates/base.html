@@ -30,14 +30,14 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img class="logo" src="{{ url_for('static', filename= 'images/gongetouxiang.jpg') }}" alt="">
+                <img class="logo" src="{{ url_for('static', filename= 'images/gonggetouxiang.jpg') }}" alt="">
             </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">首页 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/index">首页 <span class="sr-only">(current)</span></a></li>
                 <li><a href="{{ url_for('question') }}">发布消息</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

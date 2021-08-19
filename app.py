@@ -70,6 +70,11 @@ def question():
         return redirect(url_for('index'))
 
 
+@app.route('/register/', methods=['GET', 'POST'])
+def register():
+    return "进入注册页面"
+
+
 # 钩子函数(注销)
 @app.context_processor
 def my_context_processor():
