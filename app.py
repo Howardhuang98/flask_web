@@ -23,7 +23,7 @@ db.init_app(app)
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        message = "欢迎~"
+        message = "致敬伟大的龚哥   G.O.A.T."
         return render_template('login.html', message=message)
     else:
         username = request.form.get('username')
@@ -72,7 +72,25 @@ def question():
 
 @app.route('/register/', methods=['GET', 'POST'])
 def register():
-    return "进入注册页面"
+    if request.method == 'GET':
+        return render_template('register.html', message="请填写表单")
+    else:
+        username = request.form.get('username')
+        telephone = request.form.get('telephone')
+        password = request.form.get('password')
+        repassword = request.form.get('repassword')
+        answer = request.form.get('answer')
+        if password == repassword and answer == '罗斯':
+            try:
+                user = User(telephone=telephone, username=username, password=password, level=1)
+                db.session.add(user)
+                db.session.commit()
+            except:
+                db.session.rollback
+                return "注册失败，数据库写入失败，说明您已经注册过该用户名了"
+            return render_template("login.html", message="注册成功！请登录！")
+        else:
+            return render_template('register.html', message="填写信息有误！")
 
 
 # 钩子函数(注销)
