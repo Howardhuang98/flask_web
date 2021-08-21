@@ -35,7 +35,7 @@ def login():
             session.permanent = True
             return redirect(url_for('index'))
         else:
-            return redirect('/')
+            return render_template('login.html', message="登陆失败！")
 
 
 @app.route('/index')

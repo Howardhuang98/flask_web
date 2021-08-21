@@ -3,22 +3,42 @@
 {% block title %}首页{% endblock %}
 
 {% block head %}
-    <link rel="stylesheet" href="/static/css/index.css">
+
 {% endblock %}
 
 {% block main %}
-    <ul>
-        {% for message in messages %}
-            <li>
-                <div class="messages">
-                    <p class="title">{{ message.title }}</p>
-                    <p class="content">{{ message.content }}</p>
-                    <div class="author_info">
-                        <span class="author">{{ message.author.username }}</span>
-                        <span class="time">{{ message.create_time }}</span>
-                    </div>
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="jumbotron">
+    <div class="container">
+        <div class="h1">致敬伟大的龚哥！</div>
+        <p>21世纪伟大的篮球领袖；</p>
+        <p>浔城玫瑰，永不凋零；</p>
+        <p>宏远篮球，广东新星；</p>
+        <p>豁达有志精神文明创始人。</p>
+    </div>
+</div>
+
+{% for message in messages %}
+
+<div class="container-fluid" >
+    <div class="row row-same-height">
+        <div class="col-md-8">
+            <div class="h3">{{ message.title }}</div>
+            <p>{{message.content}}</p>
+
+        </div>
+        <div class="col-md-4" style="margin-top: 40px">
+            <p class="text-right">{{ message.author.username }}</p>
+            <p class="text-right">{{message.create_time}}</p>
+        </div>
+
+
+
+    </div>
+
+<br>
+</div>
+
+{% endfor %}
+
+
 {% endblock %}
