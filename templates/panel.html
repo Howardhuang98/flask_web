@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}控制面板{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <h1>用户信息：</h1>
+    <table class="table-striped" width="100%">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>用户名</th>
+            <th>手机号</th>
+            <th>等级</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        <tr>
+            <th>{{user.id}}</th>
+            <th>{{user.username}}</th>
+            <th>{{user.telephone}}</th>
+            <th>{{user.level}}</th>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+
+{% endblock %}

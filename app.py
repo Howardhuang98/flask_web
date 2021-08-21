@@ -97,6 +97,13 @@ def register():
 def notification():
     return "notification"
 
+@login_required
+@app.route('/panel/')
+def panel():
+    users = User.query.order_by(User.id).all()
+    return render_template('panel.html',users=users)
+
+
 
 # 钩子函数(注销)
 @app.context_processor
