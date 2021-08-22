@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}文档{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <h2>v2ray配置与使用</h2>
+</div>
+
+<div class="container">
+    <h3>工作机制</h3>
+    <P>和其它的网络代理工具一样，你需要在一台配置了 V2Ray 的服务器，然后在自己的设备上安装 V2Ray 客户端，然后即可流畅地访问互联网。</P>
+    <img rel="../satic/images/v2ray_workflow.png">
+    <h3>客户端配置</h3>
+    <p>服务器端已经配置完成，只需要自行配置客户端。</p>
+    <p>1. 客户端下载地址:<a rel="../static/software/v2rayN-core.zip" download>点击下载</a></p>
+    <p>2. 复制下面的连接</p>
+    <p style="word-break: break-all">
+        vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIiIsDQogICJhZGQiOiAiaHVhbmdoYW8uc3BhY2UiLA0KICAicG9ydCI6ICIxMDgwIiwNCiAgImlkIjogImI4MzEzODFkLTYzMjQtNGQ1My1hZDRmLThjZGE0OGIzMDgxMSIsDQogICJhaWQiOiAiMCIsDQogICJuZXQiOiAidGNwIiwNCiAgInR5cGUiOiAibm9uZSIsDQogICJob3N0IjogIiIsDQogICJwYXRoIjogIiIsDQogICJ0bHMiOiAiIg0KfQ==
+    </p>
+    <p>
+        3. 服务器 -> 从剪切板导入批量URL -> 右键桌面右下角v图标 -> http代理 -> 开启PAC
+    </p>
+
+
+</div>
+
+
+{% endblock %}

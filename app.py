@@ -103,6 +103,11 @@ def panel():
     users = User.query.order_by(User.id).all()
     return render_template('panel.html',users=users)
 
+@login_required
+@app.route('/documents/')
+def documents():
+    return render_template('documents.html')
+
 
 
 # 钩子函数(注销)
