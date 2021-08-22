@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory
 
 import config
 from decorators import login_required
@@ -107,6 +107,12 @@ def panel():
 @app.route('/documents/')
 def documents():
     return render_template('documents.html')
+
+@login_required
+@app.route('/download/')
+def download():
+    return send_from_directory('static','software/v2rayN-Core.zip')
+
 
 
 
