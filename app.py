@@ -1,4 +1,5 @@
 # encoding: utf-8
+import subprocess
 
 from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory
 
@@ -97,23 +98,36 @@ def register():
 def notification():
     return "notification"
 
+
 @login_required
 @app.route('/panel/')
 def panel():
     users = User.query.order_by(User.id).all()
-    return render_template('panel.html',users=users)
+    return render_template('panel.html', users=users)
+
 
 @login_required
 @app.route('/documents/')
 def documents():
     return render_template('documents.html')
 
+
 @login_required
 @app.route('/download/')
 def download():
-    return send_from_directory('static','software/v2rayN-Core.zip')
+    return send_from_directory('static', 'software/v2rayN-Core.zip')
 
 
+@login_required
+@app.route('/tool/', methods=['GET', 'POST'])
+def tool():
+    if request.method == 'GET':
+        return render_template("tool.html")
+    else:
+        youtube_url = request.form.get('youtube_url')
+        command = "youtube-dl " + youtube_url
+        youtube_dl = subprocess.Popen(args=command, shell=True)
+        return render_template("tool.html")
 
 
 # 钩子函数(注销)
